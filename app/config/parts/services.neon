@@ -17,6 +17,10 @@ services:
     - AdminModule\Grids\PlaceGrid
     - Repository\Place
 
+    - AdminModule\Forms\VisitorForm
+    - AdminModule\Grids\VisitorGrid
+    - Repository\Visitor
+
     - Forms\LoginForm
     - Authenticator\Authenticator
 
