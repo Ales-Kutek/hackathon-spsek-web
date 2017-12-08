@@ -38,6 +38,12 @@ class QuizQuestion extends BaseEntity
     protected $file_path;
 
     /**
+     * @var boolean
+     * @ORM\Column(name="`true`",type="boolean", nullable=false)
+     */
+    protected $true = FALSE;
+
+    /**
      * @return string
      */
     public function getFilePath()
@@ -49,9 +55,27 @@ class QuizQuestion extends BaseEntity
      * @param string $file_path
      * @return QuizQuestion
      */
-    public function setFilePath(string $file_path)
+    public function setFilePath(?string $file_path)
     {
         $this->file_path = $file_path;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isTrue()
+    {
+        return $this->true;
+    }
+
+    /**
+     * @param bool $true
+     * @return QuizQuestion
+     */
+    public function setTrue(bool $true)
+    {
+        $this->true = $true;
         return $this;
     }
 }

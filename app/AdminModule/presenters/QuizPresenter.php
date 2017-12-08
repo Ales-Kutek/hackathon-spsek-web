@@ -49,9 +49,6 @@ class QuizPresenter extends SecurePresenter
 
 	public function renderEdit($id)
 	{
-		$data = $this->quizRepository->getFormDataById($id);
-
-		$this->getComponent("edit")->setDefaults($data);
 	}
 
 
@@ -91,6 +88,12 @@ class QuizPresenter extends SecurePresenter
 	public function createComponentEdit()
 	{
 		$form = $this->quizForm->create();
+
+        $id = $this->getParameter("id");
+
+        $data = $this->quizRepository->getFormDataById($id);
+
+        $form->setDefaults($data);
 
 		$form->onSuccess[] = function($form, $values) {
 		    $entity = NULL;

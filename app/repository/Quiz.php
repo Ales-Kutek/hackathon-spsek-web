@@ -4,6 +4,7 @@ namespace Repository;
 
 use Kdyby\Doctrine\EntityDao;
 use Kdyby\Doctrine\EntityManager;
+use Nette\Http\FileUpload;
 use UW\Core\ORM\Repository;
 
 /**
@@ -29,8 +30,33 @@ class Quiz extends Repository\CoreRepository
 
     private function uploadFiles(array &$data)
     {
+        /** @var FileUpload $container */
+        foreach ($data["quiz_question"] as $key => &$container) {
+            /** @var FileUpload $file */
+            $file =  @$container["file_path"];
 
+            if ($file == NULL) {
+                continue;
+            }
+
+            if ($file->getName() == "") {
+                $data["quiz_question"][$key]["file_path"] = NULL;
+                continue;
+            }
+
+            $file->move(WWW_DIR . DS . "files" . DS . $file->getName());
+
+            $data["quiz_question"][$key]["file_path"] = $file->getName();
+
+        }
 	}
+
+    protected function getJoins(\Kdyby\Doctrine\QueryBuilder &$query)
+    {
+        $query->addSelect("quiz_question")
+            ->leftJoin("u.quiz_question", "quiz_question");
+    }
+
 
     public function insertForm(array $data)
     {
@@ -63,3 +89,4 @@ class Quiz extends Repository\CoreRepository
 		return $this->dao;
 	}
 }
+

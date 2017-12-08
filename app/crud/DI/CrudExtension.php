@@ -7,6 +7,7 @@ use Nette\DI\CompilerExtension;
 use Nette\DI\ContainerBuilder;
 use Nette\DI\Statement;
 use Nette\PhpGenerator\ClassType;
+use UW\Core\App\Helper\HtmlControl;
 use UW\Core\Crud\Crud;
 
 class CrudExtension extends CompilerExtension
@@ -42,5 +43,7 @@ class CrudExtension extends CompilerExtension
         parent::afterCompile($class);
 
         $initialize = $class->methods['initialize'];
+
+        $initialize->addBody(HtmlControl::class . "::register();");
     }
 }
