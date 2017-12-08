@@ -13,3 +13,7 @@
 .dz-preview a {
     color: black;
 }
+
+.skin-red .main-header .logo {
+    background: none;
+}
