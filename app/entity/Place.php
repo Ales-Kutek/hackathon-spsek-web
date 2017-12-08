@@ -31,13 +31,11 @@ class Place extends BaseEntity
 	protected $description;
 
     /**
-     * @ManyToMany(targetEntity="Device")
-     * @JoinTable(name="place_user",
-     *      joinColumns={@JoinColumn(name="place_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@JoinColumn(name="device_id", referencedColumnName="id")}
-     *      )
-     */
-    private $device;
+    * Relation for Device
+    * @ManyToOne(targetEntity="Device")
+    * @JoinColumn(name="device", referencedColumnName="id")
+    */
+    protected $device;
 
     public function __construct()
     {
