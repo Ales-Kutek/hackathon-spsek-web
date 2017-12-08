@@ -12,7 +12,6 @@ use Doctrine\ORM\Mapping\ManyToOne;
 use Doctrine\ORM\Mapping\OneToMany;
 use Doctrine\ORM\Mapping\OneToOne;
 use Gedmo\Mapping\Annotation as Gedmo;
-use UW\Core\ORM\TIdentifer;
 
 /**
  * Place
@@ -20,12 +19,26 @@ use UW\Core\ORM\TIdentifer;
  * @ORM\HasLifecycleCallbacks()
  * @ORM\Entity()
  */
-class Place extends \UW\Core\ORM\BaseEntity
+class Place extends BaseEntity
 {
-	use TIdentifer;
-
 	/** @ORM\Column(type="string") */
 	protected $title;
 
+    /**
+     * @return mixed
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
 
+    /**
+     * @param mixed $title
+     * @return Place
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+        return $this;
+    }
 }
