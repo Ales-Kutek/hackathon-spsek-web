@@ -30,10 +30,6 @@
     display: block !important;
 }
 
-.sidebar-collapse .nav-item.has-treeview:hover .nav-link {
-    color: red;
-}
-
 
 .nav-stacked li.active > a,
 .nav-stacked li.active > .nav-link
@@ -60,8 +56,26 @@
 
 .content > .row .btn {
     margin-bottom: 25px;
+
 }
 
-.sidebar-open .nav-item {
+@keyframes showup {
+    0% {
+        display: block;
+    }
+
+    100% {
+        display: none;
+    }
+}
+
+.sidebar-open .sidebar .nav-item > .nav-link {
+    display: block !important;
+
+    animation: 5s showup linear;
+}
+
+table tfoot .col-per-page select {
+    float: right;
 
 }

@@ -36,7 +36,7 @@ class PlacePresenter extends SecurePresenter
 
 	public function beforeRender()
 	{
-		$this->template->title = "Place";
+		$this->template->title = "Místa";
 	}
 
 

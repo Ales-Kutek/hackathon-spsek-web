@@ -36,7 +36,7 @@ class DevicePresenter extends SecurePresenter
 
 	public function beforeRender()
 	{
-		$this->template->title = "Device";
+		$this->template->title = "Zařízení";
 	}
 
 
