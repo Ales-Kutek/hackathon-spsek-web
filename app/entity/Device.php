@@ -23,8 +23,49 @@ class Device extends BaseEntity
 {
 	use TIdentifer;
 
-	/** @ORM\Column(type="string") */
+	/** @ORM\Column(type="string", nullable=true) */
 	protected $title;
 
+    /**
+     * @var string
+     * @ORM\Column(type="string", nullable=false)
+     */
+    protected $code;
+
+    /**
+     * @return mixed
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param mixed $title
+     * @return Device
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * @param string $code
+     * @return Device
+     */
+    public function setCode($code)
+    {
+        $this->code = $code;
+        return $this;
+    }
 
 }

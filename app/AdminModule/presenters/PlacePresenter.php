@@ -3,53 +3,53 @@
 namespace AdminModule\Presenters;
 
 /**
- * PlacesPresenter Presenter class
+ * PlacePresenter Presenter class
  */
-class PlacesPresenter extends SecurePresenter
+class PlacePresenter extends SecurePresenter
 {
 	/**
 	 * @var
-	 * \AdminModule\Forms\PlacesForm
+	 * \AdminModule\Forms\PlaceForm
 	 */
-	public $placesForm;
+	public $placeForm;
 
 	/**
 	 * @var
-	 * \AdminModule\Grids\PlacesGrid
+	 * \AdminModule\Grids\PlaceGrid
 	 */
-	public $placesGrid;
+	public $placeGrid;
 
 	/**
 	 * @var
-	 * \Repository\Places
+	 * \Repository\Place
 	 */
-	public $placesRepository;
+	public $placeRepository;
 
 
-	public function __construct(\AdminModule\Grids\PlacesGrid $placesGrid, \AdminModule\Forms\PlacesForm $placesForm, \Repository\PlacesRepository $placesRepository)
+	public function __construct(\AdminModule\Grids\PlaceGrid $placeGrid, \AdminModule\Forms\PlaceForm $placeForm, \Repository\Place $placeRepository)
 	{
-		$this->placesGrid = $placesGrid;
-		$this->placesRepository = $placesRepository;
-		$this->placesForm = $placesForm;
+		$this->placeGrid = $placeGrid;
+		$this->placeRepository = $placeRepository;
+		$this->placeForm = $placeForm;
 	}
 
 
 	public function beforeRender()
 	{
-		$this->template->title = "Pokrytí";
+		$this->template->title = "Place";
 	}
 
 
 	public function renderDetail($id)
 	{
-		$data = $this->placesRepository->getSingle($id);
+		$data = $this->placeRepository->getSingle($id);
 		        $this->template->data = $data;
 	}
 
 
 	public function renderEdit($id)
 	{
-		$data = $this->placesRepository->getFormDataById($id);
+		$data = $this->placeRepository->getFormDataById($id);
 
 		$this->getComponent("edit")->setDefaults($data);
 	}
@@ -57,19 +57,19 @@ class PlacesPresenter extends SecurePresenter
 
 	public function handleDelete($id)
 	{
-		$this->placesRepository->removeById($id);
+		$this->placeRepository->removeById($id);
 	}
 
 
 	public function createComponentNew()
 	{
-		$form = $this->placesForm->create();
+		$form = $this->placeForm->create();
 
 		$form->onSuccess[] = function($form, $values) {
 		    $entity = NULL;
 
 		    try {
-		        $entity = $this->placesRepository->insertForm($form->getValues(TRUE));
+		        $entity = $this->placeRepository->insertForm($form->getValues(TRUE));
 		        $this->flashMessage("Uloženo", "success");
 		    } catch (\Exception $ex) {
 		        $this->flashMessage("Nastala chyba. ({$ex->getMessage()})");
@@ -90,13 +90,13 @@ class PlacesPresenter extends SecurePresenter
 
 	public function createComponentEdit()
 	{
-		$form = $this->placesForm->create();
+		$form = $this->placeForm->create();
 
 		$form->onSuccess[] = function($form, $values) {
 		    $entity = NULL;
 
 		    try {
-		        $entity = $this->placesRepository->updateForm($form->getValues(TRUE), $values["id"]);
+		        $entity = $this->placeRepository->updateForm($form->getValues(TRUE), $values["id"]);
 		        $this->flashMessage("Uloženo", "success");
 		    } catch (\Exception $ex) {
 		        $this->flashMessage("Nastala chyba. ({$ex->getMessage()})");
@@ -117,8 +117,8 @@ class PlacesPresenter extends SecurePresenter
 
 	public function createComponentGrid()
 	{
-		$source = $this->placesRepository->getAll(TRUE);
+		$source = $this->placeRepository->getAll(TRUE);
 
-		return $this->placesGrid->create($source);
+		return $this->placeGrid->create($source);
 	}
 }
