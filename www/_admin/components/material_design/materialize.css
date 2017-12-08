@@ -218,3 +218,150 @@
 .form-group:not(.form-group--float-label) > .mui--is-invalid:not(:focus) ~ label {
   color: #F44336;
 }
+
+/*.form-group {*/
+    /*display: block;*/
+    /*padding-top: 15px;*/
+    /*margin-bottom: 20px;*/
+    /*position: relative;*/
+/*}*/
+
+.form-group:focus {
+    outline: 0;
+}
+
+.form-group:focus > select {
+    height: 33px;
+    margin-bottom: -1px;
+    border-color: #dd4b39;
+    border-width: 2px;
+}
+
+.form-group > select {
+    display: block;
+    height: 32px;
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.26);
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNiIgd2lkdGg9IjEwIj48cG9seWdvbiBwb2ludHM9IjAsMCAxMCwwIDUsNiIgc3R5bGU9ImZpbGw6cmdiYSgwLDAsMCwuMjQpOyIvPjwvc3ZnPg==");
+    background-repeat: no-repeat;
+    background-position: right center;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 16px;
+    font-family: inherit;
+    line-height: inherit;
+    padding: 0 25px 0 0;
+}
+
+.form-group > select::-ms-expand {
+    display: none;
+}
+
+.form-group > select:focus {
+    outline: 0;
+    height: 33px;
+    margin-bottom: -1px;
+    border-color: #dd4b39;
+    border-width: 2px;
+}
+
+.form-group > select:disabled {
+    color: rgba(0, 0, 0, 0.38);
+    cursor: not-allowed;
+    background-color: transparent;
+    opacity: 1;
+}
+
+.form-group > select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
+
+.form-group > select:focus::-ms-value {
+    background: none;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.form-group > label {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 100%;
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.form-group:focus > label,
+.form-group > select:focus ~ label {
+    color: #dd4b39;
+}
+
+.form-group__menu {
+    position: absolute;
+    z-index: 2;
+    min-width: 100%;
+    overflow-y: auto;
+    padding: 8px 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #FFF;
+    font-size: 16px;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .form-group__menu {
+        border-left: 1px solid rgba(0, 0, 0, 0.12);
+        border-top: 1px solid rgba(0, 0, 0, 0.12);
+    }
+}
+
+@supports (-ms-ime-align: auto) {
+    .form-group__menu {
+        border-left: 1px solid rgba(0, 0, 0, 0.12);
+        border-top: 1px solid rgba(0, 0, 0, 0.12);
+    }
+}
+
+.form-group__menu > div {
+    padding: 0 22px;
+    height: 42px;
+    line-height: 42px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.form-group__menu > div.mui--is-selected {
+    background-color: #EEEEEE;
+}
+
+.form-group__menu > div.mui--is-disabled {
+    color: rgba(0, 0, 0, 0.38);
+    cursor: not-allowed;
+}
+
+.form-group__menu > div:not(.mui-optgroup__label):not(.mui--is-disabled):hover {
+    background-color: #E0E0E0;
+}
+
+.mui-optgroup__option {
+    text-indent: 1em;
+}
+
+.mui-optgroup__label {
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 0.9em;
+}
