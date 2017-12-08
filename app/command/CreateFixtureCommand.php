@@ -93,8 +93,11 @@ class CreateFixtureCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $this->truncateAllTables();
+
         $fixtures = array(
-            __DIR__ . DS . ".." . DS . "fixtures" . DS . "User.yml"
+            __DIR__ . DS . ".." . DS . "fixtures" . DS . "User.yml",
+            __DIR__ . DS . ".." . DS . "fixtures" . DS . "Device.yml",
         );
 
 
@@ -105,7 +108,7 @@ class CreateFixtureCommand extends Command
     }
 
     public function truncateAllTables() {
-        $query = $this->em->getConnection()->prepare("SELECT Concat('TRUNCATE TABLE `',TABLE_NAME, '`;') FROM INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA in ('cms_cz');");
+        $query = $this->em->getConnection()->prepare("SELECT Concat('TRUNCATE TABLE `',TABLE_NAME, '`;') FROM INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA in ('hackathon_cz');");
         $query->execute();
 
         $result = $query->fetchAll(\PDO::FETCH_NUM);

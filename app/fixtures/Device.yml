@@ -1,0 +1,10 @@
+\Entity\Device:
+    Device1:
+        title: "Uvítací hala"
+        code: "xx2893"
+    Device2:
+        title: "Zahrada"
+        code: "xasd8"
+    Device3:
+        title: "U potoky"
+        code: "lala"

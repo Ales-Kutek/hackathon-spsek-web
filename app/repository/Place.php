@@ -28,8 +28,14 @@ class Place extends CoreRepository
 		$this->dao = $this->entityManager->getRepository(\Entity\Place::getClassName());
 	}
 
+    protected function getJoins(\Kdyby\Doctrine\QueryBuilder &$query)
+    {
+        $query->addSelect("device")
+            ->leftJoin("u.device", "device");
+    }
 
-	/**
+
+    /**
 	 * @return EntityManager
 	 */
 	protected function getEntityManager()

@@ -25,6 +25,22 @@ class Place extends BaseEntity
 	protected $title;
 
     /**
+     * @ManyToMany(targetEntity="Device")
+     * @JoinTable(name="place_user",
+     *      joinColumns={@JoinColumn(name="place_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@JoinColumn(name="device_id", referencedColumnName="id")}
+     *      )
+     */
+    private $device;
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->device = new ArrayCollection();
+    }
+
+    /**
      * @return mixed
      */
     public function getTitle()
@@ -41,4 +57,24 @@ class Place extends BaseEntity
         $this->title = $title;
         return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getDevice()
+    {
+        return $this->device;
+    }
+
+    /**
+     * @param mixed $device
+     * @return Place
+     */
+    public function setDevice($device)
+    {
+        $this->device = $device;
+        return $this;
+    }
+
+
 }
