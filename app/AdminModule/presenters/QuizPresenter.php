@@ -36,7 +36,7 @@ class QuizPresenter extends SecurePresenter
 
 	public function beforeRender()
 	{
-		$this->template->title = "Quiz";
+		$this->template->title = "Kvíz";
 	}
 
 

@@ -36,7 +36,7 @@ class VisitorPresenter extends SecurePresenter
 
 	public function beforeRender()
 	{
-		$this->template->title = "Visitor";
+		$this->template->title = "Návštěvníci";
 	}
 
 
