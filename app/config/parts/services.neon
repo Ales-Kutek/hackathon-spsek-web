@@ -12,6 +12,10 @@ services:
     - AdminModule\Forms\DeviceForm
     - Repository\Device
 
+    - AdminModule\Grids\PexesoGrid
+    - AdminModule\Forms\PexesoForm
+    - Repository\Pexeso
+
 
     - AdminModule\Forms\PlaceForm
     - AdminModule\Grids\PlaceGrid
