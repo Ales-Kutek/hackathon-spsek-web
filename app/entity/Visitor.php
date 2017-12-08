@@ -25,6 +25,12 @@ class Visitor extends BaseEntity
 	protected $title;
 
 	/**
+	 * @var string
+	 * @ORM\Column(type="string", nullable=false)
+	 */
+	protected $hash_code;
+
+	/**
 	 * @var int
 	 * @ORM\Column(type="integer", nullable=false)
 	 */
