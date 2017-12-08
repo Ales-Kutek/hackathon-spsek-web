@@ -40,12 +40,15 @@ class PlaceForm
 
 		$form->addHidden("id");
 
-		$form->addText("title", "Název tabule")->setRequired();
-		$form->addMultiSelect("device", "Zařízení", $this->deviceRepository->getPairs(function (\Entity\Device $value) {
+        $form->addText("title", "Název tabule")->setRequired();
+        $form->addTextArea("description", "Krátký popis");
+
+        $form->addMultiSelect("device", "Zařízení", $this->deviceRepository->getPairs(function (\Entity\Device $value) {
             return $value->getTitle() . " " . "( " . $value->getCode() . ")";
         }));
 
-		$form->addSubmit("submit", "Uložit");
+
+        $form->addSubmit("submit", "Uložit");
 		$form->addSubmit("submit_stay", "Uložit a zůstat");
 
 		return $form;

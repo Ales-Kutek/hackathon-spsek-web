@@ -23,6 +23,12 @@ class Place extends BaseEntity
 {
 	/** @ORM\Column(type="string") */
 	protected $title;
+	
+	/**
+	 * @var string
+	 * @ORM\Column(type="text", nullable=true)
+	 */
+	protected $description;
 
     /**
      * @ManyToMany(targetEntity="Device")
@@ -76,5 +82,21 @@ class Place extends BaseEntity
         return $this;
     }
 
+    /**
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
 
+    /**
+     * @param string $description
+     * @return Place
+     */
+    public function setDescription(string $description)
+    {
+        $this->description = $description;
+        return $this;
+    }
 }
