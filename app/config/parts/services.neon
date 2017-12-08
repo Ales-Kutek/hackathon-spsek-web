@@ -8,6 +8,10 @@ services:
     - Base\BaseForm
     - Base\BaseGrid
 
+    - AdminModule\Grids\DeviceGrid
+    - AdminModule\Forms\DeviceForm
+    - Repository\Device
+
     - Forms\LoginForm
 
     - Authenticator\Authenticator
