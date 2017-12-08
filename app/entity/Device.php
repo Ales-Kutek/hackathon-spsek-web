@@ -67,5 +67,4 @@ class Device extends BaseEntity
         $this->code = $code;
         return $this;
     }
-
 }

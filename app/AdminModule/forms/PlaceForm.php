@@ -3,6 +3,7 @@
 namespace AdminModule\Forms;
 
 use Base\BaseForm;
+use Repository\Device;
 
 /**
  * PlaceForm Form class
@@ -14,12 +15,23 @@ class PlaceForm
 
 	/** \Repository\Place */
 	private $placeRepository;
+    /**
+     * @var Device
+     */
+    private $deviceRepository;
 
-	public function __construct(BaseForm $baseForm, \Repository\Place $placeRepository)
+    /**
+     * PlaceForm constructor.
+     * @param BaseForm $baseForm
+     * @param \Repository\Place $placeRepository
+     * @param Device $deviceRepository
+     */
+    public function __construct(BaseForm $baseForm, \Repository\Place $placeRepository, Device $deviceRepository)
 	{
 		$this->baseForm = $baseForm;
 		$this->placeRepository = $placeRepository;
-	}
+        $this->deviceRepository = $deviceRepository;
+    }
 
 
 	public function create()
@@ -28,7 +40,10 @@ class PlaceForm
 
 		$form->addHidden("id");
 
-		$form->addText("title", "Titulek")->setRequired();
+		$form->addText("title", "Název tabule")->setRequired();
+		$form->addMultiSelect("device", "Zařízení", $this->deviceRepository->getPairs(function (\Entity\Device $value) {
+            return $value->getTitle() . " " . "( " . $value->getCode() . ")";
+        }));
 
 		$form->addSubmit("submit", "Uložit");
 		$form->addSubmit("submit_stay", "Uložit a zůstat");

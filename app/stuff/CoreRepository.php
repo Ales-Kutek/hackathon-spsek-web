@@ -268,7 +268,6 @@ abstract class CoreRepository extends Object
      * @return array
      */
     public function getFormDataById($id, array $exceptFields = array()) {
-        Profiler::start("FORM HYDRATOR START");
 
         $result = $this->getSingle($id, TRUE)->getQuery()->getSingleResult("form");
 
@@ -278,7 +277,6 @@ abstract class CoreRepository extends Object
             }
         }
 
-        Profiler::finish("FORM HYDRATOR STOP");
 
         return $result;
     }
