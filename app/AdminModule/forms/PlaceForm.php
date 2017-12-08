@@ -15,6 +15,7 @@ class PlaceForm
 
 	/** \Repository\Place */
 	private $placeRepository;
+
     /**
      * @var Device
      */
