@@ -1,0 +1,52 @@
+extensions:
+    console: Kdyby\Console\DI\ConsoleExtension
+    events: Kdyby\Events\DI\EventsExtension
+    annotations: Kdyby\Annotations\DI\AnnotationsExtension
+    doctrine: Kdyby\Doctrine\DI\OrmExtension
+    gedmo: Rixxi\Gedmo\DI\OrmExtension
+    fixtures: Zenify\DoctrineFixtures\DI\FixturesExtension
+    dependentSelectBox: NasExt\Forms\DI\DependentSelectBoxExtension
+#    extendedFormMacros: Instante\ExtendedFormMacros\DI\ExtendedFormMacrosExtension
+    doctrine2identity: Majkl578\NetteAddons\Doctrine2Identity\DI\IdentityExtension
+    - WebChemistry\Forms\Controls\DI\MultiplierExtension
+    tbDatePicker: RadekDostal\NetteComponents\DateTimePicker\TbDatePicker\DI\TbDatePickerExtension
+    tbDateTimePicker: RadekDostal\NetteComponents\DateTimePicker\TbDateTimePicker\DI\TbDateTimePickerExtension
+    formSlug: IPub\FormSlug\DI\FormSlugExtension
+    crud: Core\Crud\DI\CrudExtension
+
+crud:
+   settings:
+       templates:
+        basic:
+           UW\Core\Crud\Templates\Entity:
+               path: '%appDir%/entity/{$name}.php'
+               name: '{$name}'
+           UW\Core\Crud\Templates\Repository:
+               name: '{$name}'
+               path: '%appDir%/repository/{$name}.php'
+           UW\Core\Crud\Templates\AdminModule\Forms:
+               name: '{$name}Form'
+               path: '%appDir%/AdminModule/forms/{$name}.php'
+           UW\Core\Crud\Templates\AdminModule\Grids:
+               name: '{$name}Grid'
+               path: '%appDir%/AdminModule/grids/{$name}.php'
+           UW\Core\Crud\Templates\AdminModule\Presenters:
+               name: '{$name}Presenter'
+               path: '%appDir%/AdminModule/presenters/{$name}.php'
+           UW\Core\Crud\Templates\AdminModule\Templates\NewLatte:
+               path: '%appDir%/AdminModule/presenters/templates/{$name}/new.latte'
+           UW\Core\Crud\Templates\AdminModule\Templates\EditLatte:
+                path: '%appDir%/AdminModule/presenters/templates/{$name}/edit.latte'
+           UW\Core\Crud\Templates\AdminModule\Templates\DefaultLatte:
+                path: '%appDir%/AdminModule/presenters/templates/{$name}/default.latte'
+           UW\Core\Crud\Templates\AdminModule\Templates\DetailLatte:
+                path: '%appDir%/AdminModule/presenters/templates/{$name}/detail.latte'
+
+
+tbDateTimePicker:
+  format: j. n. Y H:i
+
+gedmo:
+    translatableLocale: cs_CZ
+    defaultLocale: cs_CZ
+    all: on

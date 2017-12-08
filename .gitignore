@@ -1,0 +1,12 @@
+.idea/*
+!.idea/vcs.xml
+log/*
+!log/.gitkeep
+temp/*
+!temp/.gitkeep
+vendor/*
+www/files/*
+!.gitignore
+!.htaccess
+!web.config
+app/config/config.local.neon

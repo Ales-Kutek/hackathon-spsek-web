@@ -1,0 +1,62 @@
+{block content}
+
+<div class="login-box-body">
+    <p class="login-box-msg">Pro přístup do redakčního systému se přihlašte.</p>
+
+    {control auth}
+    {*form auth}
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="form-group has-feedback">
+                    {input email}
+                    <span class="form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    {input password}
+                    <span class="form-control-feedback"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                {label remember}{input remember}{/label}
+            </div>
+            <!-- /.col -->
+            <div class="col-md-6">
+                {input submit, class => 'btn btn-primary btn-block btn-flat'}
+            </div>
+            <!-- /.col -->
+        </div>
+    {/form*}
+
+        <div class="social-auth-links text-md-center">
+            <br><br>
+            <p>- nebo se přihlašte pomocí -</p>
+            <a href="{plink fbLogin-open!}" class="btn btn-flat btn-facebook" data-toggle="tooltip" data-original-title="Facebook">
+                <i class="fa fa-facebook"></i>
+            </a>
+
+            <a n:href="googleLogin-open!" class="btn btn-flat btn-google" data-toggle="tooltip" data-original-title="Google+">
+                <i class="fa fa-google-plus"></i>
+            </a>
+
+            {*
+            <a href="{plink Auth:twitter}" class="btn btn-flat btn-twitter" data-toggle="tooltip" data-original-title="Twitter">
+                <i class="fa fa-twitter"></i>
+            </a>
+            <a href="{plink Auth:instagram}" class="btn btn-flat btn-instagram" data-toggle="tooltip" data-original-title="Instagram">
+                <i class="fa fa-instagram"></i>
+            </a>
+            <a href="{plink Auth:linkedin}" class="btn btn-flat btn-linkedin" data-toggle="tooltip" data-original-title="LinkedIn">
+                <i class="fa fa-linkedin"></i>
+            </a>
+            *}
+        </div>
+        <!-- /.social-auth-links -->
+
+        <p class="text-md-center">
+            <a href="{plink Auth:forgotten}">Zapomněl jsem heslo</a><br>
+        </p>
+    <!-- /.login-box-body -->
+
+{/block}

@@ -1,0 +1,41 @@
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel clearfix">
+            <div class="image">
+                {*
+                <img src="dist/img/user2-160x160.jpg" class="img-rounded" alt="User Image">
+                *}
+            </div>
+            {if $user->isLoggedIn()}
+                <div class="info">
+                    <h6>{$user->identity->name}</h6>
+                    <!-- Status -->
+                    <div class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle status btn btn-default btn-xs">Uživatel</a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#">Profil</a>
+                            <a class="dropdown-item" href="{plink Auth:logout}">Odhlásit se</a>
+                        </div>
+                    </div>
+                </div>
+            {/if}
+        </div>
+
+        {*
+        <form action="#" method="get" class="sidebar-form">
+            <div class="form-group has-icon">
+                <input type="search" name="q" class="form-control" placeholder="SearchList" data-widget="search"
+                       data-target="#searchable-treeview">
+                <button type="submit" class="form-icon"><i class="fa fa-search"></i></button>
+            </div>
+        </form><!-- /.sidebar-form -->
+        *}
+
+        {include @menu.latte}
+
+    </div>
+    <!-- /.sidebar -->
+</aside>

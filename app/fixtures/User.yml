@@ -1,0 +1,8 @@
+\Entity\User:
+    user0:
+        name: "God"
+        surname: "Bůh"
+        password: "god"
+        email: "god@god.cz"
+        blocked: 0
+        phone: <phoneNumber()>

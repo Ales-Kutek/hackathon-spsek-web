@@ -1,0 +1,8 @@
+create:
+    class: UW\Core\Crud\Console\CreateCrud
+    tags:
+        - kdyby.console.command
+delete:
+    class: UW\Core\Crud\Console\DeleteCrud
+    tags:
+        - kdyby.console.command

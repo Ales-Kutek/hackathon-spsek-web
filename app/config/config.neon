@@ -1,0 +1,36 @@
+includes:    
+	- parts/extensions.neon
+	- parts/services.neon
+	- parts/commands.neon
+	- parts/parameters.neon
+
+doctrine:
+    user: root
+    password: 
+    dbname: hackathon_cz
+    dql:
+        string:
+            regexp: DoctrineExtensions\Query\Mysql\Regexp
+            replace: DoctrineExtensions\Query\Mysql\Replace
+        datetime_functions:
+            datediff: DoctrineExtensions\Query\Mysql\DateDiff
+            now: DoctrineExtensions\Query\Mysql\Now
+    metadata:
+        Entity: %appDir%/entity
+    hydrators:
+      form: Hydrator\FormHydrator
+
+application:
+	errorPresenter: Error
+	mapping:
+		*: *Module\Presenters\*Presenter
+
+session:
+	expiration: 14 days
+	autoStart: yes
+
+tracy:
+    bar:
+
+events:
+	debugger: off

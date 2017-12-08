@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/_admin/components/adminlte/adminlte.min.css">
+    <link rel="stylesheet" href="/_admin/components/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/_admin/components/bootstrap/font-awesome.min.css">
+    <link rel="stylesheet" href="/_admin/components/bootstrap/ionicons.min.css">
+    <link rel="stylesheet" href="/_admin/components/outdatedbrowser/outdatedbrowser.min.css">
+    <title>{ifset title}{include title|stripHtml} | {/ifset}</title>
+
+    <style>
+        .login-page {
+            background-color: rgb(236, 238, 239);
+        }
+    </style>
+
+    {block head}{/block}
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+    <div class="login-logo">
+        <a href="{plink Dashboard:default}">
+            Our app <b>XXX</b>
+        </a>
+    </div>
+    <!-- /.login-logo -->
+
+    {snippet flashMessage}
+        <div n:foreach="$flashes as $flash" class="callout callout-{$flash->type}">
+            <p>
+                {$flash->message}
+            </p>
+        </div>
+    {/snippet}
+
+    {block content}
+    {/block}
+
+</div>
+<!-- /.login-box -->
+
+{block scripts}
+    <script src="/_admin/components/outdatedbrowser/outdatedbrowser.min.js"></script>
+    <script src="/_admin/jquery-2.2.3.min.js"></script>
+    <script src="/_admin/components/bootstrap/tether.min.js"></script>
+    <script src="/_admin/components/bootstrap/bootstrap.min.js"></script>
+
+    <script src="/_admin/components/adminlte/adminlte.min.js"></script>
+
+    {*
+    <script src="/_admin/components/nette/netteForms.min.js"></script>
+    *}
+
+    <script>
+        function addLoadEvent(func) {
+            var oldonload = window.onload;
+            if (typeof window.onload != 'function') {
+                window.onload = func;
+            } else {
+                window.onload = function () {
+                    if (oldonload) {
+                        oldonload();
+                    }
+                    func();
+                }
+            }
+        }
+
+        addLoadEvent(function () {
+            outdatedBrowser({
+                bgColor: '#f25648',
+                color: '#ffffff',
+                lowerThan: 'borderImage'
+            })
+        });
+    </script>
+
+{/block}
+
+<div id="outdated">
+    <h6>Váš prohlížeč je zastaralý!</h6>
+    <p>Redakční systém nebude správně pracovat.
+        <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/cs">Aktualizovat prohlížeč nyní</a>
+    </p>
+</div>
+
+</body>
+</html>
+

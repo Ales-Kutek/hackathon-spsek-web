@@ -1,0 +1,38 @@
+<script src="/_admin/jquery-2.2.3.min.js"></script>
+<script src="/_admin/components/bootstrap/tether.min.js"></script>
+<script src="/_admin/components/bootstrap/bootstrap.min.js"></script>
+
+<script src="/_admin/components/adminlte/adminlte.min.js"></script>
+{*
+<script src="/_admin/components/adminlte/app.min.js"></script>
+*}
+
+<script src="/_admin/components/nette/netteForms.min.js"></script>
+<script src="/_admin/components/nette/nette.ajax.js"></script>
+<script src="/_admin/components/ublaboo/datagrid.js"></script>
+<script src="/_admin/components/ublaboo/datagrid-spinners.min.js"></script>
+<script src="/_admin/components/ublaboo/datagrid-instant-url-refresh.min.js"></script>
+
+<script src="/_admin/components/dropzone/dropzone.js"></script>
+<script src="/_admin/components/tinymce/tinymce.min.js"></script>
+<script src="/_admin/components/tinymce/cs.js"></script>
+<script src="/_admin/components/datatree/datatree/js/jstree-3.3.1.min.js"></script>
+<script src="/_admin/components/datatree/datatree/js/datatree.js"></script>
+<script src="/_admin/components/canvas/blob.js"></script>
+<script src="/_admin/components/cropper/cropper.js"></script>
+<script src="/_admin/components/bootbox/bootbox.min.js"></script>
+<script src="/_admin/components/forms/slug.js"></script>
+<script src="/_admin/components/dependentSelectBox.js"></script>
+<script src="/_admin/components/high_charts/high_charts.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/smalot-bootstrap-datetimepicker/2.4.4/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/smalot-bootstrap-datetimepicker/2.4.4/js/locales/bootstrap-datetimepicker.cs.js"></script>
+
+{if (isset($noUploadScripts) && $noUploadScripts) === FALSE}
+    {\Zet\FileUpload\FileUploadControl::getScripts('/_admin/components')}
+{/if}
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/Sortable/1.6.0/Sortable.min.js"></script>
+
+<script src="/_admin/main.js"></script>
+<script src="/_admin/components/dropzone/dropzone_init.js"></script>

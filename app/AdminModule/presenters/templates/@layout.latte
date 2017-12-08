@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {include @layout/@styles.latte}
+
+    <title>{if isset($title)}{$title} | {/if}Test</title>
+
+    {block head}{/block}
+</head>
+
+<body class="hold-transition skin-green-light sidebar-mini">
+<div class="wrapper">
+
+    {include @layout/@search.latte}
+    {include @layout/@navbar.latte}
+    {include @layout/@sidebar.latte}
+
+    <div class="content-wrapper">
+        {include @layout/@contentHeader.latte}
+
+        <div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+
+        <div class="content container-fluid">
+            {* NAHRÁNÍ CONTENTU STRÁNKY DO STRINGU*}
+            {capture $content}
+                {include content}
+            {/capture}
+
+            {* NAJDE VŠECHNY JAVASCRIPTY A VYMAŽE JE*}
+            {php
+            preg_match_all("#<\s*?script\b[^>]*>(.*?)</script\b[^>]*>#s", $content, $scripts);
+            $content = preg_replace("#<\s*?script\b[^>]*>(.*?)</script\b[^>]*>#s", "", $content);
+            }
+
+            {* VYPSÁNÍ CONTENTU BEZ JAVASCRIPTU *}
+            {$content|noescape}
+        </div>
+    </div>
+    <div class="clearfix"></div>
+
+    {include @layout/@footer.latte}
+</div>
+
+{include "@cropperModal.latte"}
+
+{include @layout/@scripts.latte}
+
+{block script}{/block}
+
+{* VYPSÁNÍ JAVASRIPTŮ Z CONTENTU *}
+{foreach $scripts[0] as $s}
+    {$s|noescape}
+{/foreach}
+</body>
+</html>
+
+

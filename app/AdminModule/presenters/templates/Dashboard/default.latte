@@ -1,0 +1,81 @@
+{block content}
+    {*<div class="info-box bg-green">*}
+        {*<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>*}
+
+        {*<div class="info-box-content">*}
+            {*<span class="info-box-text">Alba celkem</span>*}
+            {*<span class="info-box-number">{$albumCountAll}</span>*}
+
+            {*<div class="progress">*}
+                {*<div class="progress-bar" style="width: 50%"></div>*}
+            {*</div>*}
+        {*</div>*}
+    {*</div>*}
+
+    {*<div class="info-box bg-green">*}
+        {*<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>*}
+
+        {*<div class="info-box-content">*}
+            {*<span class="info-box-text">Alba za poslední měsíc</span>*}
+            {*<span class="info-box-number">{$albumCountLastMonth}</span>*}
+
+            {*<div class="progress">*}
+                {*<div class="progress-bar" style="width: 50%"></div>*}
+            {*</div>*}
+        {*</div>*}
+    {*</div>*}
+
+    {*<div class="info-box bg-blue">*}
+        {*<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>*}
+
+        {*<div class="info-box-content">*}
+            {*<span class="info-box-text">Články celkem</span>*}
+            {*<span class="info-box-number">{$articleCountAll}</span>*}
+
+            {*<div class="progress">*}
+                {*<div class="progress-bar" style="width: 50%"></div>*}
+            {*</div>*}
+        {*</div>*}
+    {*</div>*}
+
+    {*<div class="info-box bg-blue">*}
+        {*<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>*}
+
+        {*<div class="info-box-content">*}
+            {*<span class="info-box-text">Články za poslední měsíc</span>*}
+            {*<span class="info-box-number">{$articleCountLastMonth}</span>*}
+
+            {*<div class="progress">*}
+                {*<div class="progress-bar" style="width: 50%"></div>*}
+            {*</div>*}
+        {*</div>*}
+    {*</div>*}
+
+    {*<div style="min-width: 310px; max-width: 800px; height: 400px; margin: 0" id="chart">*}
+    {*</div>*}
+{*{/block}*}
+
+{*{block script}*}
+    {*<script>*}
+        {*var seriesData = {$articleGraphData|noescape};*}
+        {*$('#chart').highcharts({*}
+            {*chart: {*}
+            {*},*}
+            {*xAxis: {*}
+                {*tickInterval: 1,*}
+                {*labels: {*}
+                    {*enabled: true,*}
+                    {*formatter: function() { return seriesData[this.value][0];},*}
+                {*}*}
+            {*},*}
+
+            {*series: [{*}
+                {*data: seriesData*}
+            {*}]*}
+        {*});*}
+    {*</script>*}
+{*{/block}*}
+
+{*{block scripts}*}
+    {*{include parent}*}
+{*{/block}*}

@@ -1,0 +1,15 @@
+.adjustFormImages img {
+    max-width: 100%;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.zet-fileupload-table img {
+    max-height: 128px;
+}
+
+.dz-preview a {
+    color: black;
+}

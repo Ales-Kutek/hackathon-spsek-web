@@ -1,0 +1,23 @@
+services:
+    cmdFixture:
+        class: Commands\CreateFixtureCommand
+        tags: [kdyby.console.command]
+    nette.userStorage: Majkl578\NetteAddons\Doctrine2Identity\Http\UserStorage
+    router: Router\Factory::createRouter
+    cacheStorage: \Nette\Caching\Storages\FileStorage(%tempDir%/cache)
+    - Base\BaseForm
+    - Base\BaseGrid
+
+    - Forms\LoginForm
+
+    - Authenticator\Authenticator
+
+    - AdminModule\Forms\PlacesForm
+    - AdminModule\Forms\DistrictForm
+
+    - AdminModule\Grids\DistrictGrid
+    - AdminModule\Grids\PlacesGrid
+
+    - Repository\UserRepository
+    - Repository\PlacesRepository
+    - Repository\DistrictRepository

@@ -1,0 +1,72 @@
+{
+    "name": "nette/sandbox",
+    "description": "The sandbox is a pre-packaged Nette Framework project, basic configured structure for your application.",
+    "homepage": "https://nette.org",
+    "type": "project",
+    "license": ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
+    "authors": [
+        {
+            "name": "David Grudl",
+            "homepage": "https://davidgrudl.com"
+        },
+        {
+            "name": "Nette Community",
+            "homepage": "https://nette.org/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0",
+        "nette/application": "^2.4",
+        "nette/bootstrap": "^2.4.2",
+        "nette/caching": "^2.5",
+        "nette/database": "^2.4",
+        "nette/di": "^2.4",
+        "nette/finder": "^2.4",
+        "nette/forms": "v2.4.4",
+        "nette/http": "^2.4",
+        "nette/mail": "^2.4",
+        "nette/robot-loader": "^2.4",
+        "nette/safe-stream": "^2.3",
+        "nette/security": "^2.4",
+        "nette/utils": "^2.4",
+        "latte/latte": "^2.4",
+        "tracy/tracy": "^2.4",
+        "dg/adminer-custom": "^1.6",
+        "kdyby/doctrine": "v3.2.1",
+        "rixxi/gedmo": "^1.0",
+        "zenify/doctrine-fixtures": "^4.0",
+        "ublaboo/datagrid": "^5.1",
+        "nasext/dependent-select-box": "^2.7",
+        "michalsvec/nette-opauth": "*",
+        "opauth/opauth":  "dev-master",
+        "opauth/facebook":  "dev-master",
+        "opauth/google":  "dev-master",
+        "opauth/twitter":  "dev-master",
+        "opauth/instagram":  "dev-master",
+        "opauth/linkedin":  "dev-master",
+        "majkl578/nette-identity-doctrine": "^2.2",
+        "instante/bootstrap-3-renderer": "dev-master",
+        "pehape/data-tree": "dev-master",
+        "olicek/dropzone-uploader": "dev-master",
+        "webchemistry/forms-multiplier": "dev-master",
+        "ipub/permissions": "^2.0",
+        "radekdostal/nette-datetimepicker": "^2.5",
+        "kdyby/events": "^3.1",
+        "jzechy/jquery-fileupload": "^1.2",
+        "beberlei/DoctrineExtensions": "^1.0",
+        "ipub/form-slug": "@dev",
+        "doctrine/dbal": "v2.5.12",
+        "ipub/visual-paginator": "@dev"
+    },
+    "require-dev": {
+        "nette/tester": "^1.6",
+        "arachne/codeception": "^0.7.6"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Module\\": "C:/www/cms/app/classes/ModuleLoader.php"
+        }
+    }
+}
