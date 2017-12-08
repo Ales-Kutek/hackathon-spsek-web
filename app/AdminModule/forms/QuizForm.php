@@ -33,16 +33,12 @@ class QuizForm
 
 		$form->addText("title", "Titulek")->setRequired();
 
-		$form->addHtml("q_strat", "<div class='question_wrapper'>");
-
 		/** @var Multiplier $questions */
 		$questions = $form->addMultiplier("quiz_question", function (Container $container) {
 		    $container->addText("title", "Název otázky")->setRequired();
 		    $container->addUpload("file_path", "Obrázek");
 		    $container->addCheckbox("true", "Správna odpověď");
         }, 2);
-
-		$form->addHtml("q_end", "</div>");
 
         $questions->addRemoveButton("Odstranit");
 
