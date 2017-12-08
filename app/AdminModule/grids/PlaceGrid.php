@@ -4,15 +4,13 @@ namespace AdminModule\Grids;
 
 use Base\BaseGrid;
 
-
 /**
- * PlacesGrid Grid class
+ * PlaceGrid Grid class
  */
-class PlacesGrid
+class PlaceGrid
 {
 	/** \AdminModule\Grids\Base */
 	private $baseGrid;
-
 
 	public function __construct(BaseGrid $baseGrid)
 	{
@@ -24,10 +22,7 @@ class PlacesGrid
 	{
 		$grid = $this->baseGrid->create($source);
 
-        $grid->setPagination(FALSE);
-
-		$grid->addColumnLink("title", "Název", "Places:detail")->setSortable()->setFilterText();
-		$grid->addColumnLink("district", "Okres", "Places:detail", "district.title")->setSortable()->setFilterText();
+		$grid->addColumnLink("title", "Název", "Place:detail")->setSortable()->setFilterText();
 
 		$grid->addAction("edit", "")
 		        ->setIcon("pencil")

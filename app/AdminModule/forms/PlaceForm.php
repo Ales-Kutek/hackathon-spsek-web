@@ -5,21 +5,20 @@ namespace AdminModule\Forms;
 use Base\BaseForm;
 
 /**
- * DistrictForm Form class
+ * PlaceForm Form class
  */
-class DistrictForm
+class PlaceForm
 {
 	/** \AdminModule\Forms\Base */
 	private $baseForm;
 
-	/** \Repository\District */
-	private $districtRepository;
+	/** \Repository\Place */
+	private $placeRepository;
 
-
-	public function __construct(BaseForm $baseForm, \Repository\DistrictRepository $districtRepository)
+	public function __construct(BaseForm $baseForm, \Repository\Place $placeRepository)
 	{
 		$this->baseForm = $baseForm;
-		$this->districtRepository = $districtRepository;
+		$this->placeRepository = $placeRepository;
 	}
 
 

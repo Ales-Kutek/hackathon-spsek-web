@@ -29,7 +29,8 @@ class DeviceForm
 
 		$form->addHidden("id");
 
-		$form->addText("title", "Titulek")->setRequired();
+		$form->addText("title", "Titulek")->setAttribute("placeholder", "Nepovinné");
+		$form->addText("code", "Označení")->setRequired();
 
 		$form->addSubmit("submit", "Uložit");
 		$form->addSubmit("submit_stay", "Uložit a zůstat");

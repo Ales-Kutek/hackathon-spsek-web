@@ -12,16 +12,12 @@ services:
     - AdminModule\Forms\DeviceForm
     - Repository\Device
 
-    - Forms\LoginForm
 
+    - AdminModule\Forms\PlaceForm
+    - AdminModule\Grids\PlaceGrid
+    - Repository\Place
+
+    - Forms\LoginForm
     - Authenticator\Authenticator
 
-    - AdminModule\Forms\PlacesForm
-    - AdminModule\Forms\DistrictForm
-
-    - AdminModule\Grids\DistrictGrid
-    - AdminModule\Grids\PlacesGrid
-
     - Repository\UserRepository
-    - Repository\PlacesRepository
-    - Repository\DistrictRepository
