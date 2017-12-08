@@ -19,7 +19,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * @ORM\HasLifecycleCallbacks()
  * @ORM\Entity()
  */
-class pexeso extends BaseEntity
+class Pexeso extends BaseEntity
 {
 	/** @ORM\Column(type="string") */
 	protected $title;
