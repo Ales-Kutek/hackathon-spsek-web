@@ -17,3 +17,19 @@
 .skin-red .main-header .logo {
     background: none;
 }
+
+.sidebar-collpapse .treeview-menu {
+    display: none !important;
+}
+
+.sidebar-collapse .nav-item.has-treeview .treeview-menu {
+    display: none !important;
+}
+
+.sidebar-collapse .nav-item.has-treeview:hover .treeview-menu {
+    display: block !important;
+}
+
+.sidebar-collapse .nav-item.has-treeview:hover .nav-link {
+    color: red;
+}
