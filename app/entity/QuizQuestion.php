@@ -30,4 +30,28 @@ class QuizQuestion extends BaseEntity
     * @JoinColumn(name="quiz", referencedColumnName="id")
     */
     protected $quiz;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $file_path;
+
+    /**
+     * @return string
+     */
+    public function getFilePath()
+    {
+        return $this->file_path;
+    }
+
+    /**
+     * @param string $file_path
+     * @return QuizQuestion
+     */
+    public function setFilePath(string $file_path)
+    {
+        $this->file_path = $file_path;
+        return $this;
+    }
 }

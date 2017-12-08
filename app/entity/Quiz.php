@@ -29,4 +29,40 @@ class Quiz extends BaseEntity
      * @JoinColumn(name="quiz_question", referencedColumnName="quiz")
      */
     protected $quiz_question = array();
+
+    /**
+     * @return mixed
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param mixed $title
+     * @return Quiz
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+        return $this;
+    }
+
+       /**
+     * @return mixed
+     */
+    public function getQuizQuestion()
+    {
+        return $this->quiz_question;
+    }
+
+    /**
+     * @param mixed $quiz_question
+     * @return Quiz
+     */
+    public function setQuizQuestion($quiz_question)
+    {
+        $this->quiz_question = $quiz_question;
+        return $this;
+    }
 }
