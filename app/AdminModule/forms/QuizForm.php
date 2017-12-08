@@ -1,6 +1,7 @@
 <?php
 
 namespace AdminModule\Forms;
+use Base\BaseForm;
 
 /**
  * QuizForm Form class
@@ -14,7 +15,7 @@ class QuizForm
 	private $quizRepository;
 
 
-	public function __construct(Base $baseForm, \Repository\Quiz $quizRepository)
+	public function __construct(BaseForm $baseForm, \Repository\Quiz $quizRepository)
 	{
 		$this->baseForm = $baseForm;
 		$this->quizRepository = $quizRepository;
