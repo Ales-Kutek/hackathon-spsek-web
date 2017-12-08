@@ -30,7 +30,7 @@ class PexesoForm
 		$form->addHidden("id");
 
 		$form->addText("title", "Titulek")->setRequired();
-		$form->addMultiUpload("files", "Obrázky pexes");
+		$form->addMultiUpload("pexeso_image", "Obrázky pexes");
 
 		$form->addSubmit("submit", "Uložit");
 		$form->addSubmit("submit_stay", "Uložit a zůstat");
