@@ -137,3 +137,53 @@
   background: #dd4b39;
 
 }
+
+.quiz_wrapper .form-group:nth-child(3n-1) {
+  padding: 10px;
+
+  background: #fff;
+
+  border-top: 3px solid #dd4b39;
+
+  margin-bottom: 0;
+}
+
+.quiz_wrapper .form-group:nth-child(2n+1) {
+  padding: 10px;
+
+  background: #fff;
+
+  margin-bottom: 0;
+}
+
+.quiz_wrapper .form-group:nth-child(3n+1) {
+  padding: 10px;
+
+  background: #fff;
+
+}
+
+.quiz_wrapper .form-group:nth-child(5n+1) {
+  padding: 10px;
+
+  background: #fff;
+
+  margin-bottom: 0;
+
+}
+
+.quiz_wrapper .form-group:first-child {
+  margin-bottom: 15px;
+}
+
+.content .btn-group {
+  margin-bottom: 15px;
+}
+
+.content form {
+  padding: 10px;
+
+  background: #fff;
+
+  border-top: 3px solid #dd4b39;
+}

@@ -34,3 +34,30 @@
     color: red;
 }
 
+
+.nav-stacked li.active > a,
+.nav-stacked li.active > .nav-link
+{
+    color: #b8c7ce;
+}
+
+
+.treeview-menu .nav-item .fa {
+    padding-right: 10px;
+}
+
+.treeview-menu .nav-item:hover a {
+    color: #fff;
+}
+
+.nav-stacked .has-treeview.active > .nav-link,
+.nav-stacked .has-treeview.active > .nav-link > *
+{
+    color: #fff;
+
+    background: #232930;
+}
+
+.content > .row .btn {
+    margin-bottom: 25px;
+}

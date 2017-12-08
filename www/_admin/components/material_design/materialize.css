@@ -1,0 +1,220 @@
+/**
+ * MUI Textfield Component
+ */
+.form-group {
+  display: block;
+  padding-top: 15px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.form-group > label {
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 100%;
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.form-group > textarea {
+  padding-top: 5px;
+}
+
+.form-group > input:focus ~ label,
+.form-group > textarea:focus ~ label {
+  color: #dd4b39;
+}
+
+.form-group--float-label > label {
+  position: absolute;
+  -webkit-transform: translate(0px, 15px);
+  transform: translate(0px, 15px);
+  font-size: 16px;
+  line-height: 32px;
+  color: rgba(0, 0, 0, 0.26);
+  text-overflow: clip;
+  cursor: text;
+  pointer-events: none;
+}
+
+.form-group--float-label > input:focus ~ label,
+.form-group--float-label > textarea:focus ~ label {
+  -webkit-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  font-size: 12px;
+  line-height: 15px;
+  text-overflow: ellipsis;
+}
+
+.form-group--float-label > input:not(:focus).mui--is-not-empty ~ label, .form-group--float-label > input:not(:focus)[value]:not([value=""]):not(.mui--is-empty):not(.mui--is-not-empty) ~ label, .form-group--float-label > input:not(:focus):not(:empty):not(.mui--is-empty):not(.mui--is-not-empty) ~ label,
+.form-group--float-label > textarea:not(:focus).mui--is-not-empty ~ label,
+.form-group--float-label > textarea:not(:focus)[value]:not([value=""]):not(.mui--is-empty):not(.mui--is-not-empty) ~ label,
+.form-group--float-label > textarea:not(:focus):not(:empty):not(.mui--is-empty):not(.mui--is-not-empty) ~ label {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 12px;
+  line-height: 15px;
+  -webkit-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  text-overflow: ellipsis;
+}
+
+.form-group--wrap-label {
+  display: table;
+  width: 100%;
+  padding-top: 0px;
+}
+
+.form-group--wrap-label:not(.form-group--float-label) > label {
+  display: table-header-group;
+  position: static;
+  white-space: normal;
+  overflow-x: visible;
+}
+
+.form-group > input,
+.form-group > textarea {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.87);
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.26);
+  outline: none;
+  width: 100%;
+  padding: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0px;
+  font-size: 16px;
+  font-family: inherit;
+  line-height: inherit;
+  background-image: none;
+}
+
+.form-group > input:focus,
+.form-group > textarea:focus {
+  border-color: #dd4b39;
+  border-width: 2px;
+}
+
+.form-group > input:disabled, .form-group > input:-moz-read-only,
+.form-group > textarea:disabled,
+.form-group > textarea:-moz-read-only {
+  cursor: not-allowed;
+  background-color: transparent;
+  opacity: 1;
+}
+
+.form-group > input:disabled, .form-group > input:read-only,
+.form-group > textarea:disabled,
+.form-group > textarea:read-only {
+  cursor: not-allowed;
+  background-color: transparent;
+  opacity: 1;
+}
+
+.form-group > input::-webkit-input-placeholder,
+.form-group > textarea::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.26);
+  opacity: 1;
+}
+
+.form-group > input:-ms-input-placeholder,
+.form-group > textarea:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.26);
+  opacity: 1;
+}
+
+.form-group > input::-ms-input-placeholder,
+.form-group > textarea::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.26);
+  opacity: 1;
+}
+
+.form-group > input::placeholder,
+.form-group > textarea::placeholder {
+  color: rgba(0, 0, 0, 0.26);
+  opacity: 1;
+}
+
+.form-group > input {
+  height: 32px;
+}
+
+.form-group > input:focus {
+  height: 33px;
+  margin-bottom: -1px;
+}
+
+.form-group > textarea {
+  min-height: 64px;
+}
+
+.form-group > textarea[rows]:not([rows="2"]):focus {
+  margin-bottom: -1px;
+}
+
+.form-group > input:focus {
+  height: 33px;
+  margin-bottom: -1px;
+}
+
+.form-group > input:invalid:not(:focus):not(:required), .form-group > input:invalid:not(:focus):required.mui--is-not-empty, .form-group > input:invalid:not(:focus):required.mui--is-empty.mui--is-touched, .form-group > input:invalid:not(:focus):required[value]:not([value=""]):not(.mui--is-empty):not(.mui--is-not-empty), .form-group > input:invalid:not(:focus):required:not(:empty):not(.mui--is-empty):not(.mui--is-not-empty),
+.form-group > textarea:invalid:not(:focus):not(:required),
+.form-group > textarea:invalid:not(:focus):required.mui--is-not-empty,
+.form-group > textarea:invalid:not(:focus):required.mui--is-empty.mui--is-touched,
+.form-group > textarea:invalid:not(:focus):required[value]:not([value=""]):not(.mui--is-empty):not(.mui--is-not-empty),
+.form-group > textarea:invalid:not(:focus):required:not(:empty):not(.mui--is-empty):not(.mui--is-not-empty),
+.form-group > input:not(:focus).mui--is-invalid:not(:required),
+.form-group > input:not(:focus).mui--is-invalid:required.mui--is-not-empty,
+.form-group > input:not(:focus).mui--is-invalid:required.mui--is-empty.mui--is-touched,
+.form-group > input:not(:focus).mui--is-invalid:required[value]:not([value=""]):not(.mui--is-empty):not(.mui--is-not-empty),
+.form-group > input:not(:focus).mui--is-invalid:required:not(:empty):not(.mui--is-empty):not(.mui--is-not-empty),
+.form-group > textarea:not(:focus).mui--is-invalid:not(:required),
+.form-group > textarea:not(:focus).mui--is-invalid:required.mui--is-not-empty,
+.form-group > textarea:not(:focus).mui--is-invalid:required.mui--is-empty.mui--is-touched,
+.form-group > textarea:not(:focus).mui--is-invalid:required[value]:not([value=""]):not(.mui--is-empty):not(.mui--is-not-empty),
+.form-group > textarea:not(:focus).mui--is-invalid:required:not(:empty):not(.mui--is-empty):not(.mui--is-not-empty) {
+  border-color: #F44336;
+  border-width: 2px;
+}
+
+.form-group > input:invalid:not(:focus):not(:required), .form-group > input:invalid:not(:focus):required.mui--is-not-empty, .form-group > input:invalid:not(:focus):required.mui--is-empty.mui--is-touched, .form-group > input:invalid:not(:focus):required[value]:not([value=""]):not(.mui--is-empty):not(.mui--is-not-empty), .form-group > input:invalid:not(:focus):required:not(:empty):not(.mui--is-empty):not(.mui--is-not-empty),
+.form-group > input:not(:focus).mui--is-invalid:not(:required),
+.form-group > input:not(:focus).mui--is-invalid:required.mui--is-not-empty,
+.form-group > input:not(:focus).mui--is-invalid:required.mui--is-empty.mui--is-touched,
+.form-group > input:not(:focus).mui--is-invalid:required[value]:not([value=""]):not(.mui--is-empty):not(.mui--is-not-empty),
+.form-group > input:not(:focus).mui--is-invalid:required:not(:empty):not(.mui--is-empty):not(.mui--is-not-empty) {
+  height: 33px;
+  margin-bottom: -1px;
+}
+
+.form-group.form-group--float-label > input:invalid:not(:focus):not(:required) ~ label, .form-group.form-group--float-label > input:invalid:not(:focus):required.mui--is-not-empty ~ label, .form-group.form-group--float-label > input:invalid:not(:focus):required[value]:not([value=""]):not(.mui--is-empty):not(.mui--is-not-empty) ~ label, .form-group.form-group--float-label > input:invalid:not(:focus):required:not(:empty):not(.mui--is-empty):not(.mui--is-not-empty) ~ label,
+.form-group.form-group--float-label > textarea:invalid:not(:focus):not(:required) ~ label,
+.form-group.form-group--float-label > textarea:invalid:not(:focus):required.mui--is-not-empty ~ label,
+.form-group.form-group--float-label > textarea:invalid:not(:focus):required[value]:not([value=""]):not(.mui--is-empty):not(.mui--is-not-empty) ~ label,
+.form-group.form-group--float-label > textarea:invalid:not(:focus):required:not(:empty):not(.mui--is-empty):not(.mui--is-not-empty) ~ label {
+  color: #F44336;
+}
+
+.form-group:not(.form-group--float-label) > input:invalid:not(:focus):not(:required) ~ label, .form-group:not(.form-group--float-label) > input:invalid:not(:focus):required.mui--is-empty.mui--is-touched ~ label, .form-group:not(.form-group--float-label) > input:invalid:not(:focus):required.mui--is-not-empty ~ label,
+.form-group:not(.form-group--float-label) > textarea:invalid:not(:focus):not(:required) ~ label,
+.form-group:not(.form-group--float-label) > textarea:invalid:not(:focus):required.mui--is-empty.mui--is-touched ~ label,
+.form-group:not(.form-group--float-label) > textarea:invalid:not(:focus):required.mui--is-not-empty ~ label {
+  color: #F44336;
+}
+
+.form-group.form-group--float-label > .mui--is-invalid.mui--is-not-empty:not(:focus) ~ label {
+  color: #F44336;
+}
+
+.form-group:not(.form-group--float-label) > .mui--is-invalid:not(:focus) ~ label {
+  color: #F44336;
+}
