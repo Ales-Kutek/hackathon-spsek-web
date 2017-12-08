@@ -43,7 +43,7 @@ class PlaceForm
         $form->addText("title", "Název tabule")->setRequired();
         $form->addTextArea("description", "Krátký popis");
 
-        $form->addMultiSelect("device", "Zařízení", $this->deviceRepository->getPairs(function (\Entity\Device $value) {
+        $form->addSelect("device", "Zařízení", $this->deviceRepository->getPairs(function (\Entity\Device $value) {
             return $value->getTitle() . " " . "( " . $value->getCode() . ")";
         }));
 
