@@ -4,6 +4,7 @@ namespace AdminModule\Forms;
 
 use Base\BaseForm;
 use Nette\Forms\Container;
+use Nette\Utils\Html;
 use WebChemistry\Forms\Controls\DI\MultiplierExtension;
 use WebChemistry\Forms\Controls\Multiplier;
 
@@ -32,6 +33,8 @@ class QuizForm
 
 		$form->addText("title", "Titulek")->setRequired();
 
+		$form->addHtml("q_strat", "<div class='question_wrapper'>");
+
 		/** @var Multiplier $questions */
 		$questions = $form->addMultiplier("quiz_question", function (Container $container) {
 		    $container->addText("title", "Název otázky")->setRequired();
@@ -39,10 +42,12 @@ class QuizForm
 		    $container->addCheckbox("true", "Správna odpověď");
         }, 2);
 
-		$questions->addCreateButton("Přidat otázku");
-		$questions->addRemoveButton("Odstranit");
+		$form->addHtml("q_end", "</div>");
 
-		$form->addSubmit("submit", "Uložit");
+        $questions->addRemoveButton("Odstranit");
+
+        $questions->addCreateButton("Přidat otázku");
+        $form->addSubmit("submit", "Uložit");
 		$form->addSubmit("submit_stay", "Uložit a zůstat");
 
 		return $form;
