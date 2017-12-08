@@ -56,7 +56,7 @@ class AuthPresenter extends BasePresenter
                 $this->flashMessage($ex->getMessage());
             }
 
-            $this->redirect("Admin:Dashboard:default");
+            $this->redirect("Dashboard:default");
         };
 
         return $form;
