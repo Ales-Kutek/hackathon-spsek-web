@@ -6,7 +6,6 @@ extensions:
     gedmo: Rixxi\Gedmo\DI\OrmExtension
     fixtures: Zenify\DoctrineFixtures\DI\FixturesExtension
     dependentSelectBox: NasExt\Forms\DI\DependentSelectBoxExtension
-#    extendedFormMacros: Instante\ExtendedFormMacros\DI\ExtendedFormMacrosExtension
     doctrine2identity: Majkl578\NetteAddons\Doctrine2Identity\DI\IdentityExtension
     - WebChemistry\Forms\Controls\DI\MultiplierExtension
     tbDatePicker: RadekDostal\NetteComponents\DateTimePicker\TbDatePicker\DI\TbDatePickerExtension
