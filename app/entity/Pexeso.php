@@ -24,6 +24,12 @@ class Pexeso extends BaseEntity
 	/** @ORM\Column(type="string") */
 	protected $title;
 
+	/**
+	 * @OneToMany(targetEntity="PexesoImage", cascade={"persist"}, mappedBy="pexeso")
+	 * @JoinColumn(name="pexeso_image", referencedColumnName="pexeso")
+	 */
+	protected $pexeso_image = array();
+
     /**
      * @return mixed
      */
@@ -42,5 +48,21 @@ class Pexeso extends BaseEntity
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getPexesoImage()
+    {
+        return $this->pexeso_image;
+    }
 
+    /**
+     * @param mixed $pexeso_image
+     * @return Pexeso
+     */
+    public function setPexesoImage($pexeso_image)
+    {
+        $this->pexeso_image = $pexeso_image;
+        return $this;
+    }
 }
