@@ -21,6 +21,10 @@ services:
     - AdminModule\Grids\VisitorGrid
     - Repository\Visitor
 
+    - AdminModule\Forms\QuizForm
+    - AdminModule\Grids\QuizGrid
+    - Repository\Quiz
+
     - Forms\LoginForm
     - Authenticator\Authenticator
 

@@ -24,5 +24,45 @@ class Visitor extends BaseEntity
 	/** @ORM\Column(type="string") */
 	protected $title;
 
+	/**
+	 * @var int
+	 * @ORM\Column(type="integer", nullable=false)
+	 */
+	protected $score = 0;
 
+    /**
+     * @return mixed
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param mixed $title
+     * @return Visitor
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getScore()
+    {
+        return $this->score;
+    }
+
+    /**
+     * @param int $score
+     * @return Visitor
+     */
+    public function setScore(int $score)
+    {
+        $this->score = $score;
+        return $this;
+    }
 }
