@@ -33,6 +33,20 @@ class Device extends BaseEntity
     protected $code;
 
     /**
+    * Relation for pexeso
+    * @ManyToOne(targetEntity="pexeso")
+    * @JoinColumn(name="pexeso", referencedColumnName="id")
+    */
+    protected $pexeso;
+
+    /**
+    * Relation for Quiz
+    * @ManyToOne(targetEntity="Quiz")
+    * @JoinColumn(name="quiz", referencedColumnName="id")
+    */
+    protected $quiz;
+
+    /**
      * @return mixed
      */
     public function getTitle()
@@ -65,6 +79,42 @@ class Device extends BaseEntity
     public function setCode($code)
     {
         $this->code = $code;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPexeso()
+    {
+        return $this->pexeso;
+    }
+
+    /**
+     * @param mixed $pexeso
+     * @return Device
+     */
+    public function setPexeso($pexeso)
+    {
+        $this->pexeso = $pexeso;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getQuiz()
+    {
+        return $this->quiz;
+    }
+
+    /**
+     * @param mixed $quiz
+     * @return Device
+     */
+    public function setQuiz($quiz)
+    {
+        $this->quiz = $quiz;
         return $this;
     }
 }

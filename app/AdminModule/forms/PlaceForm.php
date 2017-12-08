@@ -46,7 +46,7 @@ class PlaceForm
 
         $form->addSelect("device", "Zařízení", $this->deviceRepository->getPairs(function (\Entity\Device $value) {
             return $value->getTitle() . " " . "( " . $value->getCode() . ")";
-        }));
+        }))->setRequired()->setPrompt("--- Vybrat ---");
 
 
         $form->addSubmit("submit", "Uložit");
