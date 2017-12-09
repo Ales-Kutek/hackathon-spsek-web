@@ -71,4 +71,22 @@ class Visitor extends BaseEntity
         $this->score = $score;
         return $this;
     }
+
+    /**
+     * @return string
+     */
+    public function getHashCode()
+    {
+        return $this->hash_code;
+    }
+
+    /**
+     * @param string $hash_code
+     * @return Visitor
+     */
+    public function setHashCode(string $hash_code)
+    {
+        $this->hash_code = $hash_code;
+        return $this;
+    }
 }
