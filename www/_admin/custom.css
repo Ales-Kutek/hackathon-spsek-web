@@ -100,3 +100,15 @@ table tfoot .col-per-page select {
 .form-group input[type="file"] {
     margin-top: 15px;
 }
+
+.quiz_wrapper .form-group input {
+    margin-top: 20px;
+}
+
+.quiz_wrapper .form-group label {
+    margin-top: 10px;
+}
+
+.form-group .checkbox input {
+    margin-right: 15px;
+}
