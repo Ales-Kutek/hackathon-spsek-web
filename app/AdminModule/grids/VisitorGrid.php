@@ -24,6 +24,7 @@ class VisitorGrid
 		$grid = $this->baseGrid->create($source);
 
 		$grid->addColumnLink("title", "Název", "Visitor:detail")->setSortable()->setFilterText();
+		$grid->addColumnNumber("score", "Skóre")->setSortable()->setFilterText();
 
 		$grid->addAction("edit", "")
 		        ->setIcon("pencil")
