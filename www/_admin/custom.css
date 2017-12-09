@@ -87,3 +87,16 @@ table tfoot .col-per-page select {
 .treeview-menu {
     background: #232930;
 }
+
+.content .quiz_wrapper form {
+    background: none;
+    padding: 0;
+}
+
+.content .quiz_wrapper form .form-group > label {
+    margin-bottom: 15px;
+}
+
+.form-group input[type="file"] {
+    margin-top: 15px;
+}
