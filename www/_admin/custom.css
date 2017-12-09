@@ -49,9 +49,9 @@
 .nav-stacked .has-treeview.active > .nav-link,
 .nav-stacked .has-treeview.active > .nav-link > *
 {
-    color: #fff;
+    /*color: #fff;*/
 
-    background: #232930;
+    background: none;
 }
 
 .content > .row .btn {
@@ -78,4 +78,12 @@
 table tfoot .col-per-page select {
     float: right;
 
+}
+
+.datagrid {
+    background: none;
+}
+
+.treeview-menu {
+    background: #232930;
 }
