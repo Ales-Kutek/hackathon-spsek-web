@@ -113,3 +113,18 @@ table tfoot .col-per-page select {
     margin-right: 15px;
 
 }
+
+.quiz_wrapper .form-group:last-of-type {
+    margin-bottom: 25px;
+
+}
+
+.logo-mini {
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.logo-mini:hover {
+    background: none !important;
+}
